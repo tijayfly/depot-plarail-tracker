@@ -42,7 +42,7 @@ Current values are **dummy placeholders** by default (from the price paid, or a 
 - Copy both the **App ID** and the **Cert ID** from the same Production keyset. The Dev ID and user tokens aren't needed.
 - eBay keeps Production keys disabled until **Marketplace Account Deletion** notifications are dealt with. DEPOT stores no eBay user data, so choose the exemption ("not persisting eBay data") rather than setting up an endpoint.
 
-**Test eBay keys** in Settings checks the keys in the form before you save them. If a refresh fails, the item keeps its last value and shows the reason on its page, and the totals show how many trains eBay failed for. The live eBay responses haven't been confirmed yet.
+**Test eBay keys** in Settings checks the keys in the form before you save them. If a refresh fails, the item keeps its last value and shows the reason on its page, and the totals show how many trains eBay failed for.
 
 ## Publishing the view-only page to GitHub
 1. Create a repo for the page and turn on GitHub Pages (Settings → Pages → Deploy from branch → main, root).
