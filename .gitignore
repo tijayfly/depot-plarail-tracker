@@ -1,0 +1,9 @@
+node_modules
+dist/
+depot-data/
+view-only/
+*.log
+*.docx
+~$*
+*.exe
+.env
