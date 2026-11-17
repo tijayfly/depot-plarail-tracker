@@ -36,7 +36,13 @@ To build a portable Windows .exe: `npm run dist` (output in `dist/`).
 - The first launch with no data starts you with a few **example entries** (`data/seed-collection.json`). Delete them from each item's page, or replace the seed file with your own before first launch.
 
 ## Current values
-Current values are **dummy placeholders** by default (from the price paid, or a typical price for the product line, with discontinued and exclusive items drifting higher), so the app is usable out of the box. There's an eBay UK option in Settings (median asking price of Buy It Now listings) that needs your own eBay developer App ID and Cert ID; it hasn't been tested against the live eBay API yet.
+Current values are **dummy placeholders** by default (from the price paid, or a typical price for the product line, with discontinued and exclusive items drifting higher), so the app is usable out of the box. There's an eBay UK option in Settings (median asking price of Buy It Now listings) that needs your own eBay developer keys:
+
+- Use **Production** keys, not Sandbox. Sandbox is eBay's test marketplace and won't sign in to the live API.
+- Copy both the **App ID** and the **Cert ID** from the same Production keyset. The Dev ID and user tokens aren't needed.
+- eBay keeps Production keys disabled until **Marketplace Account Deletion** notifications are dealt with. DEPOT stores no eBay user data, so choose the exemption ("not persisting eBay data") rather than setting up an endpoint.
+
+**Test eBay keys** in Settings checks the keys in the form before you save them. If a refresh fails, the item keeps its last value and shows the reason on its page, and the totals show how many trains eBay failed for. The live eBay responses haven't been confirmed yet.
 
 ## Publishing the view-only page to GitHub
 1. Create a repo for the page and turn on GitHub Pages (Settings → Pages → Deploy from branch → main, root).
