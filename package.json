@@ -1,7 +1,7 @@
 {
   "name": "depot-plarail-tracker",
   "productName": "DEPOT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DEPOT: a local Plarail collection tracker (Electron)",
   "main": "main.js",
   "author": "TiJayFLY",

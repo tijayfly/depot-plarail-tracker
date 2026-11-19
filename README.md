@@ -16,7 +16,7 @@ Built from [PADDOCK](https://github.com/tijayfly/paddock-diecast-tracker) (dieca
 - Light and dark mode, and a phone-friendly layout for the exported page.
 
 ## Download (Windows)
-Grab **DEPOT-1.0.0-portable.exe** from the [latest release](https://github.com/tijayfly/depot-plarail-tracker/releases/latest). There's nothing to install: put it in its own folder and run it. Windows SmartScreen may warn because the app isn't code-signed; click **More info → Run anyway**.
+Grab **DEPOT-1.0.1-portable.exe** from the [latest release](https://github.com/tijayfly/depot-plarail-tracker/releases/latest). There's nothing to install: put it in its own folder and run it. Windows SmartScreen may warn because the app isn't code-signed; click **More info → Run anyway**.
 
 ## Run from source
 You need [Node.js](https://nodejs.org) (LTS).
@@ -42,12 +42,14 @@ Current values are **dummy placeholders** by default (from the price paid, or a 
 - Copy both the **App ID** and the **Cert ID** from the same Production keyset. The Dev ID and user tokens aren't needed.
 - eBay keeps Production keys disabled until **Marketplace Account Deletion** notifications are dealt with. DEPOT stores no eBay user data, so choose the exemption ("not persisting eBay data") rather than setting up an endpoint.
 
-**Test eBay keys** in Settings checks the keys in the form before you save them. If a refresh fails, the item keeps its last value and shows the reason on its page, and the totals show how many trains eBay failed for.
+**Test eBay keys** in Settings checks the keys in the form before you save them. With keys set, all values update from eBay when the app opens, at most once every 24 hours (**Refresh all values** in Settings updates them any time). A progress bar runs along the top while the header shows the count, then shows when values were last updated. If anything goes wrong during an update, nothing changes: the previous values and update time are kept and the header shows ⚠ with the reason. Refreshing a single item that fails keeps its last value and shows the reason on its page.
 
 ## Publishing the view-only page to GitHub
 1. Create a repo for the page and turn on GitHub Pages (Settings → Pages → Deploy from branch → main, root).
 2. Create a fine-grained personal access token limited to that repo with **Contents: Read and write**.
 3. In DEPOT: Settings → View-only page → enter `owner/repo` and the token, then **Publish now** (or tick "Also publish every time I export").
+
+When GitHub publishing is set up, closing DEPOT after adding or changing trains asks whether to publish an updated catalogue first.
 
 Only DEPOT's own files (index.html, data.js, app.js, match.js, styles.css, theme.js, logo.svg, .nojekyll, images/) are changed in that repo. The token is stored only in your local `depot-data/collection.json`.
 
